@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+
+
+{% block title %} Home {% endblock %}
+
+
+
+{% block body %}
+<div class="jumbotron p-3">
+
+    <div class="well text-left">
+    <a href="/"> <i class="fa-solid fa-arrow-left"></i></a> </div>
+        <div class="well text-center">
+    <div class="well text-center">
+
+ <h1> Atualização Paciente: {{pacientes.nome}}</h1>
+
+    </div>
+
+
+</div>
+<div class="container">
+<form action='' method = "POST">
+<table class="table">
+    <tr>
+        <td>Nome</td>
+        <td><input type="text" name="nome" id="nome" value="{{pacientes.nome}}" class="form-control">
+</td>
+    </tr>
+    <tr>
+        <td>Data de Nascimento</td>
+        <td><input type="text" name="dtNasc" id="dtNasc" value="{{pacientes.dtNasc}}" class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Nome da Mãe</td>
+        <td><input type="text" name="nomeMae" id="nomeMae" value="{{pacientes.nomeMae}}" class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Nome do Pai</td>
+        <td><input type="text" name="nomePai" id="nomePai" value="{{pacientes.nomePai}}" class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Data de Ingresso</td>
+        <td>
+       <input type="text" name="dataIngresso" id="dataIngresso" value="{{pacientes.dataIngresso}}" class="form-control">
+        </td>
+    <tr>
+        <td>Serviço de Origem</td>
+        <td>
+ <input type="text" name="servicoOrigem" id="servicoOrigem" value="{{pacientes.servicoOrigem}}" class="form-control">        </td>
+    <tr>
+        <td>Recebe Beneficio</td>
+        <td>
+<input type="text" name="recebeBeneficio" id="recebeBeneficio" value="{{pacientes.recebeBeneficio}}" class="form-control">        </td>
+    <tr>
+        <td>Cep</td>
+        <td>
+<input type="text" name="cep" id="cep" value="{{pacientes.cep}}" class="form-control">        </td>
+    <tr>
+        <td>Rua</td>
+        <td>
+<input type="text" name="rua" id="rua" value="{{pacientes.rua}}" class="form-control">        </td>
+    <tr>
+        <td>Número</td>
+        <td>
+<input type="text" name="numero" id="numero" value="{{pacientes.numero}}" class="form-control">        </td>
+    <tr>
+
+    <tr>
+        <td>Complemento</td>
+        <td>
+<input type="text" name="complemento" id="complemento" value="{{pacientes.complemento}}" class="form-control">    <tr>
+
+
+        <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+        </td>
+
+    </tr>
+</table>
+
+  </form>
+
+</div>
+
+{% endblock %}

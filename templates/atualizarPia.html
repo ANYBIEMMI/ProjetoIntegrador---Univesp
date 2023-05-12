@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+
+
+{% block title %} Home {% endblock %}
+
+
+
+{% block body %}
+<div class="jumbotron p-3">
+
+    <div class="well text-left">
+    <a href="/listPia"> <i class="fa-solid fa-arrow-left"></i></a> </div>
+        <div class="well text-center">
+    <div class="well text-center">
+
+ <h1> Atualização PIA </h1>
+
+    </div>
+
+
+</div>
+<div class="container">
+<form action='' method = "POST">
+<table class="table">
+    <tr>
+        <td>ID Paciente</td>
+     <td><input type="text"name="id_paciente"id="id_paciente"value="{{pias.id_paciente}}"class="form-control"></td>
+    </tr>
+    <tr>
+        <td>Serviço Indicado</td>
+<td><input type="text"name="serviço_indicado"id="serviço_indicado"value="{{pias.serviço_indicado}}"class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Orgão Responsável</td>
+<td><input type="text"name="orgao_responsavel"id="orgao_responsavel"value="{{pias.orgao_responsavel}}"class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Competência Territorial</td>
+ <td><input type="text"name="competencia_territorial"id="competencia_territorial"value="{{pias.competencia_territorial}}"class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Responsável das Informações</td>
+       <td><input type="text"name="responsavel_informaçoes"id="responsavel_informaçoes"value="{{pias.responsavel_informaçoes}}"class="form-control">
+</td>
+    </tr>
+
+    <tr>
+        <td>Ação de Encaminhamento</td>
+       <td><input type="text"name="acao_encaminhamento"id="acao_encaminhamento"value="{{pias.acao_encaminhamento}}"class="form-control">
+</td>
+    </tr>
+
+
+    <tr>
+        <td>Equipe Responsável</td>
+      <td>
+<input type="text"name="equipe_responsavel"id="equipe_responsavel"value="{{pias.equipe_responsavel}}"class="form-control"></td>
+
+    <tr>
+        <td>Função</td>
+        <td>
+            <input type="text"name="funcao"id="funcao"value="{{pias.funcao}}"class="form-control"></td></tr>
+
+    <tr>
+        <td>Nome do Serviço</td>
+        <td>
+<input type="text"name="nome_serviço"id="nome_serviço"value="{{pias.nome_serviço}}"class="form-control"></td>
+
+    <tr>
+        <td>Email</td>
+        <td>
+<input type="text"name="email"id="email"value="{{pias.email}}"class="form-control"></td>
+
+    <tr>
+
+    <tr>
+        <td>Telefone</td>
+        <td>
+<input type="text"name="telefone"id="telefone"value="{{pias.telefone}}"class="form-control"></td>
+
+
+
+    <tr>
+        <td>Endereço</td>
+        <td>
+            <input type="text"name="endereço"id="endereço"value="{{pias.endereço}}"class="form-control"> </td>
+    </tr>
+
+
+<br>
+      <tr>
+        <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+        </td>
+
+    </tr>
+</table>
+
+  </form>
+
+</div>
+
+{% endblock %}
+</div>

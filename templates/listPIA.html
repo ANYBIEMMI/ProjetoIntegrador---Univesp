@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+<div class="jumbotron p-3">
+    <div class="well text-center">
+
+ <h1> Lista PIA</h1>
+
+    </div>
+
+
+</div>
+<div class="container">
+        <div>
+     <a class="nav-link"  href="/createPIA">+ Novo PIA</a>
+
+    </div>
+ <br>
+    <b>Busque por:
+          <input id="busca" type="text"
+                 placeholder="Search here">
+        </b>
+    <br><br>
+ <table class="table">
+     <thead style="background-color: gray;color: aliceblue;">
+        <th>ID</th>
+        <th>ID Paciente</th>
+        <th>Serviço Indicado</th>
+        <th>Orgao Responsável</th>
+        <th>Competência Territorial</th>
+        <th>Responsável das Informações</th>
+     <th>Ações</th>
+
+
+    </thead>
+
+   <tbody id="tablePia">
+    {% for pia in pias %}
+    <tr
+    {% if loop.index %2==0 %}
+    style="background-color:RGB(205,205,205);color:black;"
+    {% else %}
+    style="background-color:RGB(217,217,243);color:black;"
+    {% endif %}
+    ><td>{{ loop.index }}</td>
+    <td>{{pia.id_paciente}}</td>
+    <td>{{pia.serviço_indicado}}</td>
+    <td>{{pia.orgao_responsavel}}</td>
+    <td>{{pia.competencia_territorial}}</td>
+    <td>{{pia.responsavel_informaçoes}}</td>
+
+
+    <td>
+        <span style="font-size: 24px;color:red;">
+          <a href="/pia/{{pia.id}}"> <i class="fa-regular fa-eye"></i></a></span> |
+        <span style="font-size: 24px;color:white;">
+       <a href="/{{pia.id}}/pia/edit"> <i class="fas fa-edit"></i></a> </span>
+        | <span style="font-size: 24px;color:red;">
+          <a href="/{{pia.id}}/pia/delete"> <i class="fas fa-trash-alt"></i></a></span>
+
+
+    </td>
+
+    {% endfor %}
+   </tbody>
+ </table>
+
+
+     <script>
+            $(document).ready(function() {
+                $("#busca").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#tablePia tr").filter(function() {
+                        $(this).toggle($(this).text()
+                        .toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
+
+</div>
+
+
+{% endblock %}
