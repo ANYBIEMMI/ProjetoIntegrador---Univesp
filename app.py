@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, redirect, abort
-from models import db, Paciente,PIA
+from models import db, Paciente,PIA,Familiar
 
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pacientes.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pias.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///familiares.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
@@ -229,4 +230,142 @@ def deletePia(id):
     return render_template('deletePIA.html')
 
 
+########################FAMILIARES############################
+
+@app.route('/createFamiliar', methods=['GET', 'POST'])
+def createFamiliar():
+    if request.method == 'GET':
+        return render_template('createFamiliar.html')
+
+    if request.method == 'POST':
+        id_paciente = request.form['id_paciente']
+        nome = request.form['nome']
+        dtNasc = request.form['dtNasc']
+        parentesco = request.form['parentesco']
+        telefone = request.form['telefone']
+        celular = request.form['celular']
+        responsavel_legal = request.form['responsavel_legal']
+        nacionalidade = request.form['nacionalidade']
+        naturalidade = request.form['naturalidade']
+        cpf = request.form['cpf']
+        rg = request.form['rg']
+        ocupaçao = request.form['ocupaçao']
+        serviço_frequentado = request.form['serviço_frequentado']
+        demanda = request.form['demanda']
+        cep = request.form['cep']
+        rua = request.form['rua']
+        numero = request.form['numero']
+        complemento = request.form['complemento']
+
+
+        familiares = Familiar(
+
+        id_paciente=id_paciente,
+      nome = nome,
+      dtNasc = dtNasc,
+       parentesco = parentesco,
+       telefone = telefone,
+        celular = celular,
+      responsavel_legal = responsavel_legal,
+       nacionalidade = nacionalidade,
+       naturalidade = naturalidade,
+       cpf = cpf,
+        rg = rg,
+        ocupaçao = ocupaçao,
+        serviço_frequentado = serviço_frequentado,
+        demanda = demanda,
+        cep = cep,
+     rua = rua,
+      numero = numero,
+     complemento = complemento,
+
+        )
+        db.session.add(familiares)
+        db.session.commit()
+        return redirect('/')
+
+
+
+@app.route('/listFamiliares')
+def RetrieveListFamiliares():
+    familiares = Familiar.query.all()
+    return render_template('listFamiliares.html',familiares= familiares)
+
+@app.route('/familiar/<int:id>')
+def RetrieveFamiliar(id):
+    familiares = Familiar.query.filter_by(id=id).first()
+    if familiares:
+        return render_template('infoFamiliar.html', familiares = familiares)
+    return f" ={id} Doenst exist"
+
+@app.route('/<int:id>/familiar/edit', methods=['GET', 'POST'])
+def updateFamiliar(id):
+    familiares = Familiar.query.filter_by(id=id).first()
+
+    if request.method == 'POST':
+        if familiares:
+            db.session.delete(familiares)
+            db.session.commit()
+
+        id_paciente = request.form['id_paciente']
+        nome = request.form['nome']
+        dtNasc = request.form['dtNasc']
+        parentesco = request.form['parentesco']
+        telefone = request.form['telefone']
+        celular = request.form['celular']
+        responsavel_legal = request.form['responsavel_legal']
+        nacionalidade = request.form['nacionalidade']
+        naturalidade = request.form['naturalidade']
+        cpf = request.form['cpf']
+        rg = request.form['rg']
+        ocupaçao = request.form['ocupaçao']
+        serviço_frequentado = request.form['serviço_frequentado']
+        demanda = request.form['demanda']
+        cep = request.form['cep']
+        rua = request.form['rua']
+        numero = request.form['numero']
+        complemento = request.form['complemento']
+
+        familiares = Familiar(
+            id_paciente=id_paciente,
+            nome=nome,
+            dtNasc=dtNasc,
+            parentesco=parentesco,
+            telefone=telefone,
+            celular=celular,
+            responsavel_legal=responsavel_legal,
+            nacionalidade=nacionalidade,
+            naturalidade=naturalidade,
+            cpf=cpf,
+            rg=rg,
+            ocupaçao=ocupaçao,
+            serviço_frequentado=serviço_frequentado,
+            demanda=demanda,
+            cep=cep,
+            rua=rua,
+            numero=numero,
+            complemento=complemento,
+
+        )
+        db.session.add(familiares)
+        db.session.commit()
+        return redirect('/listFamiliares')
+        return f"S = {id} Does nit exist"
+
+    return render_template('atualizarFamiliar.html', familiares=familiares)
+
+
+
+
+@app.route('/<int:id>/familiar/delete', methods=['GET','POST'])
+def deleteFamiliar(id):
+    familiares = Familiar.query.filter_by(id=id).first()
+    if request.method == 'POST':
+        if familiares:
+            db.session.delete(familiares)
+            db.session.commit()
+            return redirect('/listFamiliares')
+        abort(404)
+     #return redirect('/')
+    return render_template('deleteFamiliar.html')
 app.run(host='localhost', port=5000)

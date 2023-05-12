@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+
+
+{% block title %} Home {% endblock %}
+
+
+
+{% block body %}
+<div class="jumbotron p-3">
+
+     <div class="well text-left">
+        <a href="/"> <i class="fa-solid fa-arrow-left"></i></a> </div>
+    <div class="well text-center">
+
+ <h1> Novo Familiar </h1>
+
+    </div>
+
+
+</div>
+<div class="container">
+<form action='' method = "POST">
+<table class="table">
+
+    <tr>
+        <td>Paciente Relacionado</td>
+        <td><input type="text" name="id_paciente" id="id_paciente" placeholder="" class="form-control">
+</td>
+    </tr>
+    <tr>
+        <td>Nome</td>
+        <td><input type="text" name="nome" id="nome" placeholder="" class="form-control">
+</td>
+    </tr>
+    <tr>
+        <td>Data de Nascimento</td>
+        <td><input type="text" name="dtNasc" id="dtNasc" placeholder="" class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Parentesco</td>
+        <td><input type="text" name="parentesco" id="parentesco" placeholder="" class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Telefone</td>
+        <td><input type="text" name="telefone" id="telefone" placeholder="" class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Celular</td>
+        <td>
+       <input type="text" name="celular" id="celular" placeholder="" class="form-control">
+        </td>
+    <tr>
+        <td>Responsável Legal</td>
+        <td>
+ <input type="text" name="responsavel_legal" id="responsavel_legal" placeholder="" class="form-control">        </td>
+    <tr>
+        <td>Nacionalidade</td>
+        <td>
+            <input type="text" name="nacionalidade" id="nacionalidade" placeholder="" class="form-control"></td></tr>
+    <tr>
+
+         <tr>
+        <td>Naturalidade</td>
+        <td>
+            <input type="text" name="naturalidade" id="naturalidade" placeholder="" class="form-control"></td></tr>
+    <tr>
+
+         <tr>
+        <td>CPF</td>
+        <td>
+            <input type="text" name="cpf" id="cpf" placeholder="" class="form-control"></td></tr>
+    <tr>
+
+         <tr>
+        <td>RG</td>
+        <td>
+            <input type="text" name="rg" id="rg" placeholder="" class="form-control"></td></tr>
+    <tr>
+
+         <tr>
+        <td>Ocupação</td>
+        <td>
+            <input type="text" name="ocupaçao" id="ocupaçao" placeholder="" class="form-control"></td></tr>
+    <tr>
+
+         <tr>
+        <td>Serviço Frequentado</td>
+        <td>
+            <input type="text" name="serviço_frequentado" id="serviço_frequentado" placeholder="" class="form-control"></td></tr>
+    <tr>
+
+         <tr>
+        <td>Demanda</td>
+        <td>
+            <input type="text" name="demanda" id="demanda" placeholder="" class="form-control"></td></tr>
+    <tr>
+        <td>Cep</td>
+        <td>
+<input type="text" name="cep" id="cep" placeholder="" class="form-control">        </td>
+    <tr>
+        <td>Rua</td>
+        <td>
+<input type="text" name="rua" id="rua" placeholder="" class="form-control">        </td>
+    <tr>
+        <td>Número</td>
+        <td>
+<input type="text" name="numero" id="numero" placeholder="" class="form-control">        </td>
+    <tr>
+
+    <tr>
+        <td>Complemento</td>
+        <td>
+<input type="text" name="complemento" id="complemento" placeholder="" class="form-control">    <tr>
+
+
+        <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+        </td>
+
+    </tr>
+</table>
+
+  </form>
+
+</div>
+{% endblock %}

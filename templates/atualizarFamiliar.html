@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+
+
+{% block title %} Home {% endblock %}
+
+
+
+{% block body %}
+<div class="jumbotron p-3">
+
+    <div class="well text-left">
+    <a href="/listFamiliares"> <i class="fa-solid fa-arrow-left"></i></a> </div>
+        <div class="well text-center">
+    <div class="well text-center">
+
+ <h1> Atualização Familiar {{familiares.nome}} </h1>
+
+    </div>
+
+
+</div>
+<div class="container">
+<form action='' method = "POST">
+<table class="table">
+    <tr>
+        <td>ID Paciente</td>
+     <td><input type="text"name="id_paciente"id="id_paciente"value="{{familiares.id_paciente}}"class="form-control"></td>
+    </tr>
+    <tr>
+        <td>Nome</td>
+<td><input type="text"name="nome"id="nome"value="{{familiares.nome}}"class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Data de Nascimento</td>
+<td><input type="text"name="dtNasc"id="dtNasc"value="{{familiares.dtNasc}}"class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Parentesco</td>
+ <td><input type="text"name="parentesco"id="parentesco"value="{{familiares.parentesco}}"class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Telefone</td>
+       <td><input type="text"name="telefone"id="telefone"value="{{familiares.telefone}}"class="form-control">
+</td>
+    </tr>
+
+    <tr>
+        <td>Celular</td>
+       <td><input type="text"name="celular"id="celular"value="{{familiares.celular}}"class="form-control">
+</td>
+    </tr>
+
+
+    <tr>
+        <td>Equipe Responsável</td>
+      <td>
+<input type="text"name="responsavel_legal"id="responsavel_legal"value="{{familiares.responsavel_legal}}"class="form-control"></td>
+
+    <tr>
+        <td>Nacionalidade</td>
+        <td>
+            <input type="text"name="nacionalidade"id="nacionalidade"value="{{familiares.nacionalidade}}"class="form-control"></td></tr>
+
+    <tr>
+        <td>Naturalidade</td>
+        <td>
+<input type="text"name="naturalidade"id="naturalidade"value="{{familiares.naturalidade}}"class="form-control"></td>
+
+    <tr>
+        <td>CPF</td>
+        <td>
+<input type="text"name="cpf"id="cpf"value="{{familiares.cpf}}"class="form-control"></td>
+
+    <tr>
+
+    <tr>
+        <td>RG</td>
+        <td>
+<input type="text"name="rg"id="rg"value="{{familiares.rg}}"class="form-control"></td>
+
+
+
+    <tr>
+        <td>Ocupação</td>
+        <td>
+            <input type="text"name="ocupaçao"id="ocupaçao"value="{{familiares.ocupaçao}}"class="form-control"> </td>
+    </tr>
+    <tr>
+        <td>Serviço Frequentado</td>
+        <td>
+            <input type="text"name="serviço_frequentado"id="serviço_frequentado"value="{{familiares.serviço_frequentado}}"class="form-control"> </td>
+    </tr>
+    <tr>
+        <td>Demanda</td>
+        <td>
+            <input type="text"name="demanda"id="demanda"value="{{familiares.demanda}}"class="form-control"> </td>
+    </tr>
+    <tr>
+        <td>CEP</td>
+        <td>
+            <input type="text"name="cep"id="cep"value="{{familiares.cep}}"class="form-control"> </td>
+    </tr>
+    <tr>
+        <td>Rua</td>
+        <td>
+            <input type="text"name="rua"id="rua"value="{{familiares.rua}}"class="form-control"> </td>
+    </tr>
+    <tr>
+        <td>Numero</td>
+        <td>
+            <input type="text"name="numero"id="numero"value="{{familiares.numero}}"class="form-control"> </td>
+    </tr>
+    <tr>
+        <td>Complemento</td>
+        <td>
+            <input type="text"name="complemento"id="complemento"value="{{familiares.complemento}}"class="form-control"> </td>
+    </tr>
+
+
+
+<br>
+      <tr>
+        <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+        </td>
+
+    </tr>
+</table>
+
+  </form>
+
+</div>
+
+{% endblock %}
+</div>

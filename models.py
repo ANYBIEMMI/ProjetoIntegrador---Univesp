@@ -36,6 +36,50 @@ class PIA(db.Model):
         self.telefone = telefone
         self.endereço = endereço
 
+class Familiar(db.Model):
+    __tablename__ = "familiares"
+
+    id = db.Column('id', db.Integer, primary_key=True)
+    id_paciente = db.Column(db.String(150))
+    nome = db.Column(db.String(150))
+    dtNasc = db.Column(db.String(150))
+    parentesco = db.Column(db.String(150))
+    telefone = db.Column(db.String(150))
+    celular = db.Column(db.String(150))
+    responsavel_legal = db.Column(db.String(150))
+    nacionalidade = db.Column(db.String(150))
+    naturalidade = db.Column(db.String(150))
+    cpf = db.Column(db.String(150))
+    rg = db.Column(db.String(150))
+    ocupaçao = db.Column(db.String(150))
+    serviço_frequentado = db.Column(db.String(150))
+    demanda = db.Column(db.String(150))
+    cep = db.Column(db.String(150))
+    rua = db.Column(db.String(150))
+    numero = db.Column(db.String(150))
+    complemento = db.Column(db.String(150))
+
+    def __init__(self, id_paciente,  nome, dtNasc, parentesco , telefone, celular, responsavel_legal, naturalidade, nacionalidade,  cep, rua,
+                cpf, rg, ocupaçao, serviço_frequentado, demanda,  numero, complemento):
+
+        self.id_paciente = id_paciente
+        self.nome = nome
+        self.dtNasc = dtNasc
+        self.parentesco = parentesco
+        self.telefone = telefone
+        self.celular = celular
+        self.responsavel_legal = responsavel_legal
+        self.nacionalidade = nacionalidade
+        self.naturalidade = naturalidade
+        self.cpf = cpf
+        self.rg = rg
+        self.ocupaçao = ocupaçao
+        self.serviço_frequentado = serviço_frequentado
+        self.demanda = demanda
+        self.cep = cep
+        self.rua = rua
+        self.numero = numero
+        self.complemento = complemento
 
 
 class Paciente(db.Model):

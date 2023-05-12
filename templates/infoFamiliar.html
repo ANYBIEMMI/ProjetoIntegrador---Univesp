@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+{% block title %} Home {% endblock %}
+
+{% block body %}
+<div class="jumbotron p-3">
+    <div class="well text-left">
+        <a href="/listFamiliares"> <i class="fa-solid fa-arrow-left"></i></a> </div>
+        <div class="well text-center">
+
+
+    <div class="well text-center">
+
+ <h1> Informações do Familiar </h1>
+
+    </div>
+
+
+</div>
+<div class="container">
+<form action='' method = "POST">
+<table class="table">
+    <tr>
+        <td>Id Paciente:</td>
+        <td><p>{{familiares.id_paciente}}<p/>
+</td>
+    </tr>
+    <tr>
+        <td>Nome:</td>
+        <td>
+<p>{{familiares.nome}}<p/>    </tr>
+
+    <tr>
+        <td>Data de Nascimento:</td>
+        <td>
+<p>{{familiares.dtNasc}}<p/>    </tr>
+
+    <tr>
+        <td>Parentesco:</td>
+        <td>
+            <p>{{familiares.parentesco}}<p/></td>
+    </tr>
+
+    <tr>
+        <td>Telefone:</td>
+        <td>
+<p>{{familiares.telefone}}<p/>        </td>
+    <tr>
+        <td>Celular:</td>
+        <td>
+ <p>{{familiares.celular}}<p/>        </td>
+    <tr>
+        <td>Responsável Legal:</td>
+        <td>
+<p>{{familiares.responsavel_legal}}<p/>    <tr>
+
+        <td>Nacionalidade:</td>
+        <td><p>{{familiares.nacionalidade}}<p/>
+    <tr>
+        <td>Naturalidade:</td>
+        <td>
+<p>{{familiares.naturalidade}}<p/>    <tr>
+
+        <td>CPF:</td>
+        <td>
+<p>{{familiares.cpf}}<p/>    <tr>
+
+    <tr>
+        <td>RG:</td>
+        <td>
+<p>{{familiares.rg}}<p/>
+
+    </tr>
+
+     <tr>
+        <td>Ocupação:</td>
+        <td>
+<p>{{familiares.ocupaçao}}<p/>
+
+    </tr>
+     <tr>
+        <td>Serviço Frequentado:</td>
+        <td>
+<p>{{familiares.serviço_frequentado}}<p/>
+
+    </tr>
+     <tr>
+        <td>Demanda:</td>
+        <td>
+<p>{{familiares.demanda}}<p/>
+
+    </tr>
+  <tr>
+        <td>Cep:</td>
+        <td>
+<p>{{familiares.cep}}<p/>
+
+
+    </tr>
+      <tr>
+        <td>Rua:</td>
+        <td>
+<p>{{familiares.rua}}<p/>
+
+
+    </tr>
+      <tr>
+        <td>Numero:</td>
+        <td>
+<p>{{familiares.numero}}<p/>
+
+
+    </tr>
+
+    <tr>
+        <td>Complemento:</td>
+        <td>
+<p>{{familiares.complemento}}<p/>
+
+
+    </tr>
+</table>
+
+  </form>
+
+</div>
+    {% endblock %} </div>
