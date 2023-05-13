@@ -67,39 +67,25 @@ def RetrieveStudent(id):
 
 @app.route('/<int:id>/edit', methods=['GET', 'POST'])
 def update(id):
-    pacientes = Paciente.query.filter_by(id=id).first()
+    pacientes = Paciente.query.get(id)
 
     if request.method == 'POST':
         if pacientes:
-            db.session.delete(pacientes)
-            db.session.commit()
 
-        nome = request.form['nome']
-        dtNasc = request.form['dtNasc']
-        nomeMae = request.form['nomeMae']
-        nomePai = request.form['nomePai']
-        dataIngresso = request.form['dataIngresso']
-        servicoOrigem = request.form['servicoOrigem']
-        recebeBeneficio = request.form['recebeBeneficio']
-        cep = request.form['cep']
-        rua = request.form['rua']
-        numero = request.form['numero']
-        complemento = request.form['complemento']
-        pacientes = Paciente(
 
-            nome=nome,
-            dtNasc=dtNasc,
-            nomeMae=nomeMae,
-            nomePai=nomePai,
-            dataIngresso=dataIngresso,
-            servicoOrigem=servicoOrigem,
-            recebeBeneficio=recebeBeneficio,
-            cep=cep,
-            rua=rua,
-            numero=numero,
-            complemento=complemento
-        )
-        db.session.add(pacientes)
+         pacientes.nome = request.form['nome']
+        pacientes.dtNasc = request.form['dtNasc']
+        pacientes.nomeMae = request.form['nomeMae']
+        pacientes.nomePai = request.form['nomePai']
+        pacientes.dataIngresso = request.form['dataIngresso']
+        pacientes.servicoOrigem = request.form['servicoOrigem']
+        pacientes.recebeBeneficio = request.form['recebeBeneficio']
+        pacientes.cep = request.form['cep']
+        pacientes.rua = request.form['rua']
+        pacientes.numero = request.form['numero']
+        pacientes.complemento = request.form['complemento']
+
+
         db.session.commit()
         return redirect('/')
         return f"Student with id = {id} Does nit exist"
@@ -175,41 +161,26 @@ def RetrievePia(id):
 
 @app.route('/<int:id>/pia/edit', methods=['GET', 'POST'])
 def updatePia(id):
-    pias = PIA.query.filter_by(id=id).first()
+    pias = PIA.query.get(id)
 
     if request.method == 'POST':
         if pias:
-            db.session.delete(pias)
-            db.session.commit()
 
-        id_paciente = request.form['id_paciente']
-        serviço_indicado = request.form['serviço_indicado']
-        orgao_responsavel = request.form['orgao_responsavel']
-        competencia_territorial = request.form['competencia_territorial']
-        responsavel_informaçoes = request.form['responsavel_informaçoes']
-        acao_encaminhamento = request.form['acao_encaminhamento']
-        equipe_responsavel = request.form['equipe_responsavel']
-        funcao = request.form['funcao']
-        nome_serviço = request.form['nome_serviço']
-        email = request.form['email']
-        telefone = request.form['telefone']
-        endereço = request.form['endereço']
-        pias = PIA(
-            id_paciente=id_paciente,
-            serviço_indicado=serviço_indicado,
-            orgao_responsavel=orgao_responsavel,
-            competencia_territorial=competencia_territorial,
-            responsavel_informaçoes=responsavel_informaçoes,
-            acao_encaminhamento=acao_encaminhamento,
-            equipe_responsavel=equipe_responsavel,
-            funcao=funcao,
-            nome_serviço=nome_serviço,
-            email=email,
-            telefone=telefone,
-            endereço=endereço
 
-        )
-        db.session.add(pias)
+         pias.id_paciente = request.form['id_paciente']
+        pias.serviço_indicado = request.form['serviço_indicado']
+        pias.orgao_responsavel = request.form['orgao_responsavel']
+        pias.competencia_territorial = request.form['competencia_territorial']
+        pias.responsavel_informaçoes = request.form['responsavel_informaçoes']
+        pias.acao_encaminhamento = request.form['acao_encaminhamento']
+        pias.equipe_responsavel = request.form['equipe_responsavel']
+        pias.funcao = request.form['funcao']
+        pias.nome_serviço = request.form['nome_serviço']
+        pias.email = request.form['email']
+        pias.telefone = request.form['telefone']
+        pias.endereço = request.form['endereço']
+
+
         db.session.commit()
         return redirect('/listPia')
         return f"S = {id} Does nit exist"
@@ -300,54 +271,30 @@ def RetrieveFamiliar(id):
 
 @app.route('/<int:id>/familiar/edit', methods=['GET', 'POST'])
 def updateFamiliar(id):
-    familiares = Familiar.query.filter_by(id=id).first()
+    familiares = Familiar.query.get(id)
 
     if request.method == 'POST':
         if familiares:
-            db.session.delete(familiares)
-            db.session.commit()
 
-        id_paciente = request.form['id_paciente']
-        nome = request.form['nome']
-        dtNasc = request.form['dtNasc']
-        parentesco = request.form['parentesco']
-        telefone = request.form['telefone']
-        celular = request.form['celular']
-        responsavel_legal = request.form['responsavel_legal']
-        nacionalidade = request.form['nacionalidade']
-        naturalidade = request.form['naturalidade']
-        cpf = request.form['cpf']
-        rg = request.form['rg']
-        ocupaçao = request.form['ocupaçao']
-        serviço_frequentado = request.form['serviço_frequentado']
-        demanda = request.form['demanda']
-        cep = request.form['cep']
-        rua = request.form['rua']
-        numero = request.form['numero']
-        complemento = request.form['complemento']
+         familiares.id_paciente = request.form['id_paciente']
+        familiares.nome = request.form['nome']
+        familiares.dtNasc = request.form['dtNasc']
+        familiares.parentesco = request.form['parentesco']
+        familiares.telefone = request.form['telefone']
+        familiares.celular = request.form['celular']
+        familiares.responsavel_legal = request.form['responsavel_legal']
+        familiares.nacionalidade = request.form['nacionalidade']
+        familiares.naturalidade = request.form['naturalidade']
+        familiares.cpf = request.form['cpf']
+        familiares.rg = request.form['rg']
+        familiares.ocupaçao = request.form['ocupaçao']
+        familiares.serviço_frequentado = request.form['serviço_frequentado']
+        familiares.demanda = request.form['demanda']
+        familiares.cep = request.form['cep']
+        familiares.rua = request.form['rua']
+        familiares.numero = request.form['numero']
+        familiares.complemento = request.form['complemento']
 
-        familiares = Familiar(
-            id_paciente=id_paciente,
-            nome=nome,
-            dtNasc=dtNasc,
-            parentesco=parentesco,
-            telefone=telefone,
-            celular=celular,
-            responsavel_legal=responsavel_legal,
-            nacionalidade=nacionalidade,
-            naturalidade=naturalidade,
-            cpf=cpf,
-            rg=rg,
-            ocupaçao=ocupaçao,
-            serviço_frequentado=serviço_frequentado,
-            demanda=demanda,
-            cep=cep,
-            rua=rua,
-            numero=numero,
-            complemento=complemento,
-
-        )
-        db.session.add(familiares)
         db.session.commit()
         return redirect('/listFamiliares')
         return f"S = {id} Does nit exist"
