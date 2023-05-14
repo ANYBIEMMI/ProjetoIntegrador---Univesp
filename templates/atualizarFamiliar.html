@@ -15,7 +15,7 @@
         <div class="well text-center">
     <div class="well text-center">
 
- <h1> Atualização Familiar {{familiares.nome}} </h1>
+ <h1> Atualização Familiar: {{familiares.nome}} </h1>
 
     </div>
 
@@ -25,9 +25,11 @@
 <form action='' method = "POST">
 <table class="table">
     <tr>
-        <td>ID Atendido</td>
-     <td><input type="text"name="id_paciente"id="id_paciente"value="{{familiares.id_paciente}}"class="form-control"></td>
+        <td>Familiar de: </td>
+<td>{{familiares.id_paciente}}</td>
     </tr>
+
+
     <tr>
         <td>Nome</td>
 <td><input type="text"name="nome"id="nome"value="{{familiares.nome}}"class="form-control"></td>

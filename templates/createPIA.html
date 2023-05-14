@@ -23,7 +23,14 @@
 
     <tr>
         <td>ID Atendido</td>
-        <td><input type="text" name="id_paciente" id="id_paciente" placeholder="" class="form-control"></td>
+        <td>
+    <select name="id_paciente" id="id_paciente" class="form-control">
+  {% for p in pacientes %}
+    <option value="{{p.nome}}">{{p.nome}}</option>
+  {% endfor %}
+</select>
+
+        </td>
     </tr>
     <tr>
         <td>Serviço Indicado</td>

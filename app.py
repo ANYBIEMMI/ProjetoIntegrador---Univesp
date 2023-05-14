@@ -120,7 +120,8 @@ def delete(id):
 @app.route('/createPIA', methods=['GET', 'POST'])
 def createPIA():
     if request.method == 'GET':
-        return render_template('createPIA.html')
+        pacientes = Paciente.query.all()
+        return render_template('createPIA.html',pacientes=pacientes)
 
     if request.method == 'POST':
         id_paciente = request.form['id_paciente']
@@ -217,7 +218,8 @@ def deletePia(id):
 @app.route('/createFamiliar', methods=['GET', 'POST'])
 def createFamiliar():
     if request.method == 'GET':
-        return render_template('createFamiliar.html')
+        pacientes = Paciente.query.all()
+        return render_template('createFamiliar.html',pacientes=pacientes)
 
     if request.method == 'POST':
         id_paciente = request.form['id_paciente']
