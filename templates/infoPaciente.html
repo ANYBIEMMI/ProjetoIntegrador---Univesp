@@ -86,7 +86,99 @@
 
     </div>
 
-   <td></td>
+<table class="table">
+     <thead style="background-color: gray;color: aliceblue;">
+        <th>ID</th>
+        <th>ID Atendido</th>
+        <th>Serviço Indicado</th>
+        <th>Orgao Responsável</th>
+        <th>Competência Territorial</th>
+        <th>Responsável das Informações</th>
+     <th>Ações</th>
 
+
+    </thead>
+
+   <tbody id="tablePia">
+    {% for pia in pias %}
+    <tr
+    {% if loop.index %2==0 %}
+    style="background-color:RGB(205,205,205);color:black;"
+    {% else %}
+    style="background-color:RGB(217,217,243);color:black;"
+    {% endif %}
+    ><td>{{ loop.index }}</td>
+    <td>{{pia.id_paciente}}</td>
+    <td>{{pia.serviço_indicado}}</td>
+    <td>{{pia.orgao_responsavel}}</td>
+    <td>{{pia.competencia_territorial}}</td>
+    <td>{{pia.responsavel_informaçoes}}</td>
+
+
+    <td>
+        <span style="font-size: 24px;color:red;">
+          <a href="/pia/{{pia.id}}"> <i class="fa-regular fa-eye"></i></a></span> |
+        <span style="font-size: 24px;color:white;">
+       <a href="/{{pia.id}}/pia/edit"> <i class="fas fa-edit"></i></a> </span>
+        | <span style="font-size: 24px;color:red;">
+          <a href="/{{pia.id}}/pia/delete"> <i class="fas fa-trash-alt"></i></a></span>
+
+
+    </td>
+
+    {% endfor %}
+   </tbody>
+ </table>
+
+     <div class="well text-center">
+
+ <h1> PIA's relacionados ao atendido: {{pacientes.nome}}</h1>
+
+    </div>
+
+
+    <table class="table">
+     <thead style="background-color: gray;color: aliceblue;">
+        <th>ID</th>
+        <th>ID Atendido</th>
+        <th>Nome</th>
+        <th>Paretesco</th>
+        <th>Celular</th>
+        <th>Responsável Legal</th>
+     <th>Ações</th>
+
+
+    </thead>
+
+   <tbody id="tableFamiliar">
+    {% for f in familiares %}
+    <tr
+    {% if loop.index %2==0 %}
+    style="background-color:RGB(205,205,205);color:black;"
+    {% else %}
+    style="background-color:RGB(217,217,243);color:black;"
+    {% endif %}
+    ><td>{{ loop.index }}</td>
+    <td>{{f.id_paciente}}</td>
+    <td>{{f.nome}}</td>
+    <td>{{f.parentesco}}</td>
+    <td>{{f.celular}}</td>
+    <td>{{f.responsavel_legal}}</td>
+
+
+    <td>
+        <span style="font-size: 24px;color:red;">
+          <a href="/familiar/{{f.id}}"> <i class="fa-regular fa-eye"></i></a></span> |
+        <span style="font-size: 24px;color:white;">
+       <a href="/{{f.id}}/familiar/edit"> <i class="fas fa-edit"></i></a> </span>
+        | <span style="font-size: 24px;color:red;">
+          <a href="/{{f.id}}/familiar/delete"> <i class="fas fa-trash-alt"></i></a></span>
+
+
+    </td>
+
+    {% endfor %}
+   </tbody>
+ </table>
 
 {% endblock %} </div>

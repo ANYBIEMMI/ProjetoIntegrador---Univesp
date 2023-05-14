@@ -15,6 +15,12 @@ def create_table():
     db.create_all()
 
 
+@app.route('/home',methods=['GET'])
+def RetrieveAll():
+        pias = PIA.query.all()
+        return render_template('home.html', pias=pias)
+
+
 @app.route('/create', methods=['GET', 'POST'])
 def create():
     if request.method == 'GET':
@@ -50,6 +56,8 @@ def create():
         db.session.commit()
         return redirect('/')
 
+
+
 @app.route('/')
 def RetrieveList():
     pacientes = Paciente.query.all()
@@ -57,11 +65,14 @@ def RetrieveList():
 
 
 @app.route('/<int:id>')
-def RetrieveStudent(id):
+def RetrievePaciente(id):
     pacientes = Paciente.query.filter_by(id=id).first()
     if pacientes:
-        return render_template('infoPaciente.html', pacientes = pacientes)
-    return f"Employee with id ={id} Doenst exist"
+        pias = PIA.query.filter_by(id_paciente=pacientes.nome).limit(10).all()
+        familiares = Familiar.query.filter_by(id_paciente=pacientes.nome).limit(10).all()
+
+        return render_template('infoPaciente.html', pacientes=pacientes, pias=pias, familiares=familiares)
+    return f"Paciente with id={id} does not exist"
 
 
 
