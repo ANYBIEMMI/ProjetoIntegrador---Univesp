@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+
+
+{% block title %} Home {% endblock %}
+
+
+
+{% block body %}
+<div class="jumbotron p-3">
+    <div class="well text-center">
+
+ <h1> Novo PIA</h1>
+
+    </div>
+</div>
+
+
+<div class="container">
+<form action='' method = "POST">
+<table class="table">
+
+    <tr>
+        <td>ID Atendido</td>
+        <td>
+    <select name="id_paciente" id="id_paciente" class="form-control">
+  {% for p in pacientes %}
+    <option value="{{p.nome}}">{{p.nome}}</option>
+  {% endfor %}
+</select>
+
+        </td>
+    </tr>
+    <tr>
+        <td>Serviço Indicado</td>
+        <td><input type="text" name="serviço_indicado" id="serviço_indicado" placeholder="" class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Órgão Responsável </td>
+        <td><input type="text" name="orgao_responsavel" id="orgao_responsavel" placeholder="" class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Competência Territorial</td>
+        <td><input type="text" name="competencia_territorial" id="competencia_territorial" placeholder="" class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Responsável pelas Informações</td>
+        <td>
+       <input type="text" name="responsavel_informaçoes" id="responsavel_informaçoes" placeholder="" class="form-control">
+        </td>
+    </tr>
+    <tr>
+        <td>Ação de encaminhamento</td>
+        <td>
+ <input type="text" name="acao_encaminhamento" id="acao_encaminhamento" placeholder="" class="form-control">        </td>
+    </tr>
+
+    <tr>
+        <td>Equipe Responsável</td>
+        <td>
+<input type="text" name="equipe_responsavel" id="equipe_responsavel" placeholder="" class="form-control">        </td>
+    </tr>
+    <tr>
+        <td>Função</td>
+        <td>
+<input type="text" name="funcao" id="funcao" placeholder="" class="form-control">      </td>
+    </tr>
+    <tr>
+        <td>Nome do Serviço</td>
+        <td>
+<input type="text" name="nome_serviço" id="nome_serviço" placeholder="" class="form-control">        </td>
+    <tr>
+        <td>Email</td>
+        <td>
+<input type="text" name="email" id="email" placeholder="" class="form-control">        </td>
+    <tr>
+
+    <tr>
+        <td>Telefone</td>
+        <td>
+<input type="text" name="telefone" id="telefone" placeholder="" class="form-control">    <tr>
+
+     <td>Endereço</td>
+        <td>
+<input type="text" name="endereço" id="endereço" placeholder="" class="form-control">    <tr>
+
+
+
+        <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+        </td>
+
+    </tr>
+</table>
+
+  </form>
+
+</div>
+{% endblock %}

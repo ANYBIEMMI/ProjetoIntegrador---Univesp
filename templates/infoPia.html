@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+{% block title %} Home {% endblock %}
+
+{% block body %}
+<div class="jumbotron p-3">
+    <div class="well text-left">
+        <a href="/listPia"> <i class="fa-solid fa-arrow-left"></i></a> </div>
+        <div class="well text-center">
+
+
+    <div class="well text-center">
+
+ <h1> Informações do PIA</h1>
+
+    </div>
+
+
+</div>
+<div class="container">
+<form action='' method = "POST">
+<table class="table">
+    <tr>
+        <td>Id Atendido:</td>
+        <td><p>{{pias.id_paciente}}<p/>
+</td>
+    </tr>
+    <tr>
+        <td>Serviço Indicado:</td>
+        <td>
+<p>{{pias.serviço_indicado}}<p/>    </tr>
+
+    <tr>
+        <td>Órgão Responsável:</td>
+        <td>
+<p>{{pias.orgao_responsavel}}<p/>    </tr>
+
+    <tr>
+        <td>Competência Territorial:</td>
+        <td>
+            <p>{{pias.competencia_territorial}}<p/></td>
+    </tr>
+
+    <tr>
+        <td>Responsável Informações:</td>
+        <td>
+<p>{{pias.responsavel_informaçoes}}<p/>        </td>
+    <tr>
+        <td>Ação de Encaminhamento:</td>
+        <td>
+ <p>{{pias.acao_encaminhamento}}<p/>        </td>
+    <tr>
+        <td>Equipe Responsável:</td>
+        <td>
+<p>{{pias.equipe_responsavel}}<p/>    <tr>
+        <td>Função:</td>
+        <td><p>{{pias.id_funcao}}<p/>
+    <tr>
+        <td>Nome do Serviço:</td>
+        <td>
+<p>{{pias.nome_serviço}}<p/>    <tr>
+        <td>Email:</td>
+        <td>
+<p>{{pias.id_email}}<p/>    <tr>
+
+    <tr>
+        <td>Telefone:</td>
+        <td>
+<p>{{pias.telefone}}<p/>
+
+
+    </tr>
+
+
+    <tr>
+        <td>Endereço:</td>
+        <td>
+<p>{{pias.endereço}}<p/>
+
+
+    </tr>
+</table>
+
+  </form>
+
+</div>
+    {% endblock %} </div>

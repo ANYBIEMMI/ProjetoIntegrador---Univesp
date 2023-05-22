@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+ 
+{% block title %} Home {% endblock %}
+
+ 
+{% block body %}
+<div class="container">
+<form action='' method="post">
+    <br>
+    <p>Seguir com a exclusão do Familiar:  </p>
+     <br>
+
+    <input type = "submit" value="YES" class="btn btn-danger">
+    <a href='/listFamiliares'>Cancel</a>
+</form>
+</div>
+{% endblock %}

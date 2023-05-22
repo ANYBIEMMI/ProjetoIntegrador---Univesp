@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+
+
+{% block title %} Home {% endblock %}
+
+
+
+{% block body %}
+<div class="jumbotron p-3">
+
+     <div class="well text-left">
+        <a href="/"> <i class="fa-solid fa-arrow-left"></i></a> </div>
+    <div class="well text-center">
+
+ <h1> Novo Atendido</h1>
+
+    </div>
+
+
+</div>
+<div class="container">
+<form action='' method = "POST">
+<table class="table">
+    <tr>
+        <td>Nome</td>
+        <td><input type="text" name="nome" id="nome" placeholder="nome" class="form-control">
+</td>
+    </tr>
+    <tr>
+        <td>Data de Nascimento</td>
+        <td><input type="text" name="dtNasc" id="dtNasc" placeholder="dtNasc" class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Nome da Mãe</td>
+        <td><input type="text" name="nomeMae" id="nomeMae" placeholder="nomeMae" class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Nome do Pai</td>
+        <td><input type="text" name="nomePai" id="nomePai" placeholder="nomePai" class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Data de Ingresso</td>
+        <td>
+       <input type="text" name="dataIngresso" id="dataIngresso" placeholder="dataIngresso" class="form-control">
+        </td>
+    <tr>
+        <td>Serviço de Origem</td>
+        <td>
+ <input type="text" name="servicoOrigem" id="servicoOrigem" placeholder="servicoOrigem" class="form-control">        </td>
+    <tr>
+        <td>Recebe Beneficio</td>
+        <td>
+<input type="text" name="recebeBeneficio" id="recebeBeneficio" placeholder="recebeBeneficio" class="form-control">        </td>
+    <tr>
+        <td>Cep</td>
+        <td>
+<input type="text" name="cep" id="cep" placeholder="cep" class="form-control">        </td>
+    <tr>
+        <td>Rua</td>
+        <td>
+<input type="text" name="rua" id="rua" placeholder="rua" class="form-control">        </td>
+    <tr>
+        <td>Número</td>
+        <td>
+<input type="text" name="numero" id="numero" placeholder="numero" class="form-control">        </td>
+    <tr>
+
+    <tr>
+        <td>Complemento</td>
+        <td>
+<input type="text" name="complemento" id="complemento" placeholder="complemento" class="form-control">    <tr>
+
+
+        <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+        </td>
+
+    </tr>
+</table>
+
+  </form>
+
+</div>
+{% endblock %}

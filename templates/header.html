@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+ 
+
+{% block title %} Flask CRUD {% endblock %}
+ 
+ 
+ 
+{% block body %}
+<div class="container-fluid" style="background-color: rgb( 0, 0, 0) ">
+    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-ligth" >
+    <div class="container-fluid">
+      <a class="navbar-brand" style="color:white" href="#">PIA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" style="color: rgb(255,255,255)">
+
+            <li class="nav-item">
+            <a class="nav-link" style="color:white" href="/">Lista Atendidos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color:white" href="/listPia">Lista PIA</a>
+          </li>
+
+            <li class="nav-item">
+            <a class="nav-link" style="color:white" href="/listFamiliares">Lista Familiares</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> 
+</div>
+</div>
+
+ 
+ 
+{% endblock %}

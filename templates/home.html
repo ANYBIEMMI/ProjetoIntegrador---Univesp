@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+{% block title %} Home {% endblock %}
+
+
+
+{% block body %}
+
+<div class="jumbotron p-3">
+
+
+    <div class="well text-center">
+
+ <h1> Resumo Dados </h1>
+    </div>
+
+</div>
+
+<div class="container">
+
+        <div class="box">
+            <h1>Atendidos por Raça</h1>
+
+            <script type="text/javascript">
+                var chart1;
+                $(document).ready(function(){
+                chart1 = new Highcharts.Chart({
+                chart: {renderTo: 'container1'},
+                series: [{data: 1,2,3,4}]
+            });
+        });
+</script>
+            <p>Aqui você pode inserir um gráfico ou qualquer outro tipo de visualização dos dados de vendas.</p>
+        </div>
+
+        <div class="box">
+            <h1>Atendidos por Sexo</h1>
+            <p>Aqui você pode mostrar um resumo dos seus clientes, como o número total de clientes, clientes ativos, etc.</p>
+        </div>
+
+        <div class="box">
+            <h1>Atendidos</h1>
+            <p>Aqui você pode exibir notificações importantes para o usuário.</p>
+        </div>
+    </div>
+
+{% endblock %}
