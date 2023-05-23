@@ -329,3 +329,5 @@ def deleteFamiliar(id):
      #return redirect('/')
     return render_template('deleteFamiliar.html')
 app.run(host='localhost', port=5000)
+
+
