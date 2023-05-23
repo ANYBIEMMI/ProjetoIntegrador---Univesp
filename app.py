@@ -84,8 +84,8 @@ def update(id):
         if pacientes:
 
 
-         pacientes.nome = request.form['nome']
-        pacientes.dtNasc = request.form['dtNasc']
+         #pacientes.nome = request.form['nome']
+         pacientes.dtNasc = request.form['dtNasc']
         pacientes.nomeMae = request.form['nomeMae']
         pacientes.nomePai = request.form['nomePai']
         pacientes.dataIngresso = request.form['dataIngresso']
@@ -179,8 +179,8 @@ def updatePia(id):
         if pias:
 
 
-         pias.id_paciente = request.form['id_paciente']
-        pias.serviço_indicado = request.form['serviço_indicado']
+        #pias.id_paciente = request.form['id_paciente']
+         pias.serviço_indicado = request.form['serviço_indicado']
         pias.orgao_responsavel = request.form['orgao_responsavel']
         pias.competencia_territorial = request.form['competencia_territorial']
         pias.responsavel_informaçoes = request.form['responsavel_informaçoes']
@@ -289,8 +289,8 @@ def updateFamiliar(id):
     if request.method == 'POST':
         if familiares:
 
-         familiares.id_paciente = request.form['id_paciente']
-        familiares.nome = request.form['nome']
+        #familiares.id_paciente = request.form['id_paciente']
+         familiares.nome = request.form['nome']
         familiares.dtNasc = request.form['dtNasc']
         familiares.parentesco = request.form['parentesco']
         familiares.telefone = request.form['telefone']
