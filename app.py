@@ -328,6 +328,10 @@ def deleteFamiliar(id):
         abort(404)
      #return redirect('/')
     return render_template('deleteFamiliar.html')
-app.run(host='0.0.0.0')
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
+
+
 
 
